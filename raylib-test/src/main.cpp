@@ -15,7 +15,7 @@ int offset = 75;
 
 double lastUpdateTime{};
 
-bool isInDeque(const deque<Vector2>& deque, Vector2& pos) {
+bool isInDeque(deque<Vector2>& deque, Vector2& pos) {
 	for (unsigned int i = 0; i < deque.size(); ++i) {
 		if (Vector2Equals(deque[i], pos)) {
 			return true;
@@ -25,7 +25,7 @@ bool isInDeque(const deque<Vector2>& deque, Vector2& pos) {
 	return false;
 }
  
-bool isTimeElapsed(double& const interval) {
+bool isTimeElapsed(double& interval) {
     double currentTime = GetTime();
     if (currentTime - lastUpdateTime >= interval) {
         lastUpdateTime = currentTime;
